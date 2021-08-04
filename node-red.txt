@@ -1,0 +1,37 @@
+//UARTで受信したバイナリデータを
+//HEX2文字に変換し受信バッファに格納する。
+
+
+var temp = global.get("RDBUF");
+var DLEN = msg.payload.length;
+
+for(var i = 0; i < DLEN; i++){
+  temp = temp  + toHex(msg.payload[i]) + " ";
+}
+
+global.set("RDBUF",temp);
+
+return msg;
+
+
+function toHex(v) {
+    return (('00' + v.toString(16).toUpperCase()).substr(-2));
+}
+
+
+global.set("RDBUF","");
+return msg;
+
+
+global.set("flg_CMD",0);
+return msg;
+
+
+var tmp_flg_CMD=0;
+
+while (tmp_flg_CMD == 0){
+    tmp_flg_CMD = global.get("flg_CMD");
+}
+
+flg_CMD= 0;
+return msg;
