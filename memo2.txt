@@ -1,0 +1,22 @@
+linaro@linaro-alip:~$ sudo curl --insecure -fsSL https://deb.nodesource.com/setup_14.x | sudo bash -
+
+## Installing the NodeSource Node.js 14.x repo...
+
+
+## Populating apt-get cache...
+
++ apt-get update
+Hit:1 http://security.debian.org buster/updates InRelease
+Hit:2 http://cdn-fastly.deb.debian.org/debian buster InRelease
+Hit:3 http://cdn-fastly.deb.debian.org/debian buster-updates InRelease
+Hit:4 http://repo.mysql.com/apt/debian buster InRelease
+Reading package lists... Done
+N: Skipping acquire of configured file 'mysql-apt-config/binary-armhf/Packages' as repository 'http://repo.mysql.com/apt/debian buster InRelease' doesn't support architecture 'armhf'
+N: Skipping acquire of configured file 'mysql-8.0/binary-armhf/Packages' as repository 'http://repo.mysql.com/apt/debian buster InRelease' doesn't support architecture 'armhf'
+N: Skipping acquire of configured file 'mysql-tools/binary-armhf/Packages' as repository 'http://repo.mysql.com/apt/debian buster InRelease' doesn't support architecture 'armhf'
+
+## Confirming "buster" is supported...
+
++ curl -sLf -o /dev/null 'https://deb.nodesource.com/node_14.x/dists/buster/Release'
+
+## Your distribution, identified as "buster", is not currently supported, please contact NodeSource at https://github.com/nodesource/distributions/issues if you think this is incorrect or would like your distribution to be considered for support
