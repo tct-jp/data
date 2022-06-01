@@ -40,3 +40,14 @@ BUG_REPORT_URL="https://bugs.debian.org/"
 linaro@linaro-alip:~$ cat /proc/version
 Linux version 4.4.194 (leslie_yu@asus-docker-env) (gcc version 6.3.1 20170404 (Linaro GCC 6.3-2017.05) ) #52 SMP Tue Oct 26 08:35:58 UTC 2021
 
+
+
+linaro@linaro-alip:~$ curl --version
+curl 7.64.0 (arm-unknown-linux-gnueabihf) libcurl/7.64.0 OpenSSL/1.1.1d zlib/1.2.11 libidn2/2.0.5 libpsl/0.20.2 (+libidn2/2.0.5) libssh2/1.8.0 nghttp2/1.36.0 librtmp/2.3
+Release-Date: 2019-02-06
+Protocols: dict file ftp ftps gopher http https imap imaps ldap ldaps pop3 pop3s rtmp rtsp scp sftp smb smbs smtp smtps telnet tftp
+Features: AsynchDNS IDN IPv6 Largefile GSS-API Kerberos SPNEGO NTLM NTLM_WB SSL libz TLS-SRP HTTP2 UnixSockets HTTPS-proxy PSL
+
+curl -fsSL https://deb.nodesource.com/setup_14.x | bash -
+sudo curl --insecure -fsSL https://deb.nodesource.com/setup_14.x | sudo bash -
+
