@@ -20,3 +20,23 @@ N: Skipping acquire of configured file 'mysql-tools/binary-armhf/Packages' as re
 + curl -sLf -o /dev/null 'https://deb.nodesource.com/node_14.x/dists/buster/Release'
 
 ## Your distribution, identified as "buster", is not currently supported, please contact NodeSource at https://github.com/nodesource/distributions/issues if you think this is incorrect or would like your distribution to be considered for support
+
+
+
+linaro@linaro-alip:~$ uname -a
+Linux linaro-alip 4.4.194 #52 SMP Tue Oct 26 08:35:58 UTC 2021 armv7l GNU/Linux
+linaro@linaro-alip:~$ uname -r
+4.4.194
+linaro@linaro-alip:~$ cat /etc/os-release
+PRETTY_NAME="Debian GNU/Linux 10 (buster)"
+NAME="Debian GNU/Linux"
+VERSION_ID="10"
+VERSION="10 (buster)"
+VERSION_CODENAME=buster
+ID=debian
+HOME_URL="https://www.debian.org/"
+SUPPORT_URL="https://www.debian.org/support"
+BUG_REPORT_URL="https://bugs.debian.org/"
+linaro@linaro-alip:~$ cat /proc/version
+Linux version 4.4.194 (leslie_yu@asus-docker-env) (gcc version 6.3.1 20170404 (Linaro GCC 6.3-2017.05) ) #52 SMP Tue Oct 26 08:35:58 UTC 2021
+
