@@ -1,135 +1,52 @@
-linaro@linaro-alip:~$ sudo curl --insecure -fsSL https://deb.nodesource.com/setup_14.x | sudo bash -
+linaro@linaro-alip:~/slwebap_tinker/slwebap$ python manage.py makemigrations
+Traceback (most recent call last):
+  File "/home/linaro/slwebap_tinker/slwebap/manage.py", line 47, in <module>
+    main()
+  File "/home/linaro/slwebap_tinker/slwebap/manage.py", line 43, in main
+    execute_from_command_line(sys.argv)
+  File "/home/linaro/.pyenv/versions/3.10.4/lib/python3.10/site-packages/django/core/management/__init__.py", line 446, in execute_from_command_line
+    utility.execute()
+  File "/home/linaro/.pyenv/versions/3.10.4/lib/python3.10/site-packages/django/core/management/__init__.py", line 420, in execute
+    django.setup()
+  File "/home/linaro/.pyenv/versions/3.10.4/lib/python3.10/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/linaro/.pyenv/versions/3.10.4/lib/python3.10/site-packages/django/apps/registry.py", line 124, in populate
+    app_config.ready()
+  File "/home/linaro/.pyenv/versions/3.10.4/lib/python3.10/site-packages/axes/apps.py", line 50, in ready
+    from axes import checks, signals  # noqa
+  File "/home/linaro/.pyenv/versions/3.10.4/lib/python3.10/site-packages/axes/signals.py", line 20, in <module>
+    user_locked_out = Signal(providing_args=["request", "username", "ip_address"])
+TypeError: Signal.__init__() got an unexpected keyword argument 'providing_args'
+linaro@linaro-alip:~/slwebap_tinker/slwebap$ 
+linaro@linaro-alip:~/slwebap_tinker/slwebap$ 
+linaro@linaro-alip:~/slwebap_tinker/slwebap$ 
+linaro@linaro-alip:~/slwebap_tinker/slwebap$ 
+linaro@linaro-alip:~/slwebap_tinker/slwebap$ 
+linaro@linaro-alip:~/slwebap_tinker/slwebap$ python3 manage.py runserver
+INFO,2022-06-06 10:43:06,493,autoreload,8350,3069648912,Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/home/linaro/.pyenv/versions/3.10.4/lib/python3.10/threading.py", line 1009, in _bootstrap_inner
+    self.run()
+  File "/home/linaro/.pyenv/versions/3.10.4/lib/python3.10/threading.py", line 946, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/linaro/.pyenv/versions/3.10.4/lib/python3.10/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/home/linaro/.pyenv/versions/3.10.4/lib/python3.10/site-packages/django/core/management/commands/runserver.py", line 125, in inner_run
+    autoreload.raise_last_exception()
+  File "/home/linaro/.pyenv/versions/3.10.4/lib/python3.10/site-packages/django/utils/autoreload.py", line 87, in raise_last_exception
+    raise _exception[1]
+  File "/home/linaro/.pyenv/versions/3.10.4/lib/python3.10/site-packages/django/core/management/__init__.py", line 398, in execute
+    autoreload.check_errors(django.setup)()
+  File "/home/linaro/.pyenv/versions/3.10.4/lib/python3.10/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/home/linaro/.pyenv/versions/3.10.4/lib/python3.10/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/linaro/.pyenv/versions/3.10.4/lib/python3.10/site-packages/django/apps/registry.py", line 124, in populate
+    app_config.ready()
+  File "/home/linaro/.pyenv/versions/3.10.4/lib/python3.10/site-packages/axes/apps.py", line 50, in ready
+    from axes import checks, signals  # noqa
+  File "/home/linaro/.pyenv/versions/3.10.4/lib/python3.10/site-packages/axes/signals.py", line 20, in <module>
+    user_locked_out = Signal(providing_args=["request", "username", "ip_address"])
+TypeError: Signal.__init__() got an unexpected keyword argument 'providing_args'
 
-## Installing the NodeSource Node.js 14.x repo...
-
-
-## Populating apt-get cache...
-
-+ apt-get update
-Hit:1 http://security.debian.org buster/updates InRelease
-Hit:2 http://cdn-fastly.deb.debian.org/debian buster InRelease
-Hit:3 http://cdn-fastly.deb.debian.org/debian buster-updates InRelease
-Hit:4 http://repo.mysql.com/apt/debian buster InRelease
-Reading package lists... Done
-N: Skipping acquire of configured file 'mysql-apt-config/binary-armhf/Packages' as repository 'http://repo.mysql.com/apt/debian buster InRelease' doesn't support architecture 'armhf'
-N: Skipping acquire of configured file 'mysql-8.0/binary-armhf/Packages' as repository 'http://repo.mysql.com/apt/debian buster InRelease' doesn't support architecture 'armhf'
-N: Skipping acquire of configured file 'mysql-tools/binary-armhf/Packages' as repository 'http://repo.mysql.com/apt/debian buster InRelease' doesn't support architecture 'armhf'
-
-## Confirming "buster" is supported...
-
-+ curl -sLf -o /dev/null 'https://deb.nodesource.com/node_14.x/dists/buster/Release'
-
-## Your distribution, identified as "buster", is not currently supported, please contact NodeSource at https://github.com/nodesource/distributions/issues if you think this is incorrect or would like your distribution to be considered for support
-
-
-
-linaro@linaro-alip:~$ uname -a
-Linux linaro-alip 4.4.194 #52 SMP Tue Oct 26 08:35:58 UTC 2021 armv7l GNU/Linux
-linaro@linaro-alip:~$ uname -r
-4.4.194
-linaro@linaro-alip:~$ cat /etc/os-release
-PRETTY_NAME="Debian GNU/Linux 10 (buster)"
-NAME="Debian GNU/Linux"
-VERSION_ID="10"
-VERSION="10 (buster)"
-VERSION_CODENAME=buster
-ID=debian
-HOME_URL="https://www.debian.org/"
-SUPPORT_URL="https://www.debian.org/support"
-BUG_REPORT_URL="https://bugs.debian.org/"
-linaro@linaro-alip:~$ cat /proc/version
-Linux version 4.4.194 (leslie_yu@asus-docker-env) (gcc version 6.3.1 20170404 (Linaro GCC 6.3-2017.05) ) #52 SMP Tue Oct 26 08:35:58 UTC 2021
-
-
-
-linaro@linaro-alip:~$ curl --version
-curl 7.64.0 (arm-unknown-linux-gnueabihf) libcurl/7.64.0 OpenSSL/1.1.1d zlib/1.2.11 libidn2/2.0.5 libpsl/0.20.2 (+libidn2/2.0.5) libssh2/1.8.0 nghttp2/1.36.0 librtmp/2.3
-Release-Date: 2019-02-06
-Protocols: dict file ftp ftps gopher http https imap imaps ldap ldaps pop3 pop3s rtmp rtsp scp sftp smb smbs smtp smtps telnet tftp
-Features: AsynchDNS IDN IPv6 Largefile GSS-API Kerberos SPNEGO NTLM NTLM_WB SSL libz TLS-SRP HTTP2 UnixSockets HTTPS-proxy PSL
-
-curl -fsSL https://deb.nodesource.com/setup_14.x | bash -
-sudo curl --insecure -fsSL https://deb.nodesource.com/setup_14.x | sudo bash -
-
-
-
-linaro@linaro-alip:~$ sudo curl --insecure -fsSL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-
-## Installing the NodeSource Node.js 12.x repo...
-
-
-## Populating apt-get cache...
-
-+ apt-get update
-Hit:1 http://cdn-fastly.deb.debian.org/debian buster InRelease
-Hit:2 http://cdn-fastly.deb.debian.org/debian buster-updates InRelease
-Hit:3 http://repo.mysql.com/apt/debian buster InRelease
-Hit:4 http://security.debian.org buster/updates InRelease
-Reading package lists... Done
-N: Skipping acquire of configured file 'mysql-apt-config/binary-armhf/Packages' as repository 'http://repo.mysql.com/apt/debian buster InRelease' doesn't support architecture 'armhf'
-N: Skipping acquire of configured file 'mysql-8.0/binary-armhf/Packages' as repository 'http://repo.mysql.com/apt/debian buster InRelease' doesn't support architecture 'armhf'
-N: Skipping acquire of configured file 'mysql-tools/binary-armhf/Packages' as repository 'http://repo.mysql.com/apt/debian buster InRelease' doesn't support architecture 'armhf'
-
-## Confirming "buster" is supported...
-
-+ curl -sLf -o /dev/null 'https://deb.nodesource.com/node_12.x/dists/buster/Release'
-
-## Adding the NodeSource signing key to your keyring...
-
-+ curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --dearmor | tee /usr/share/keyrings/nodesource.gpg >/dev/null
-gpg: WARNING: unsafe ownership on homedir '/home/linaro/.gnupg'
-
-## Creating apt sources list file for the NodeSource Node.js 12.x repo...
-
-+ echo 'deb [signed-by=/usr/share/keyrings/nodesource.gpg] https://deb.nodesource.com/node_12.x buster main' > /etc/apt/sources.list.d/nodesource.list
-+ echo 'deb-src [signed-by=/usr/share/keyrings/nodesource.gpg] https://deb.nodesource.com/node_12.x buster main' >> /etc/apt/sources.list.d/nodesource.list
-
-## Running `apt-get update` for you...
-
-+ apt-get update
-Hit:1 http://repo.mysql.com/apt/debian buster InRelease
-Hit:2 http://security.debian.org buster/updates InRelease
-Hit:3 http://cdn-fastly.deb.debian.org/debian buster InRelease
-Hit:4 http://cdn-fastly.deb.debian.org/debian buster-updates InRelease
-Get:5 https://deb.nodesource.com/node_12.x buster InRelease [4584 B]
-Get:6 https://deb.nodesource.com/node_12.x buster/main armhf Packages [781 B]
-Fetched 5365 B in 3s (1841 B/s)
-Reading package lists... Done
-N: Skipping acquire of configured file 'mysql-apt-config/binary-armhf/Packages' as repository 'http://repo.mysql.com/apt/debian buster InRelease' doesn't support architecture 'armhf'
-N: Skipping acquire of configured file 'mysql-8.0/binary-armhf/Packages' as repository 'http://repo.mysql.com/apt/debian buster InRelease' doesn't support architecture 'armhf'
-N: Skipping acquire of configured file 'mysql-tools/binary-armhf/Packages' as repository 'http://repo.mysql.com/apt/debian buster InRelease' doesn't support architecture 'armhf'
-
-## Run `sudo apt-get install -y nodejs` to install Node.js 12.x and npm
-## You may also need development tools to build native addons:
-     sudo apt-get install gcc g++ make
-## To install the Yarn package manager, run:
-     curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/yarnkey.gpg >/dev/null
-     echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-     sudo apt-get update && sudo apt-get install yarn
-
-
-linaro@linaro-alip:~$ sudo apt-get install -y nodejs
-Reading package lists... Done
-Building dependency tree
-Reading state information... Done
-nodejs is already the newest version (10.24.0~dfsg-1~deb10u1).
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-
-
-
------------------------------------------------------------------------------------
-linaro@linaro-alip:~$ node wetty
-internal/modules/cjs/loader.js:905
-  throw err;
-  ^
-
-Error: Cannot find module '/home/linaro/wetty'
-    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:902:15)
-    at Function.Module._load (internal/modules/cjs/loader.js:746:27)
-    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:75:12)
-    at internal/main/run_main_module.js:17:47 {
-  code: 'MODULE_NOT_FOUND',
-  requireStack: []
-}
------------------------------------------------------------------------------------
------------------------------------------------------------------------------------
